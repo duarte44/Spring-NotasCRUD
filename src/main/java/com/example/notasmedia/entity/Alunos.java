@@ -41,6 +41,14 @@ public class Alunos {
 
     }
 
+    public Alunos(Long id, String nome, Double n1, Double n2, Double n3) {
+        this.id = id;
+        this.nome = nome;
+        this.n1 = n1;
+        this.n2 = n2;
+        this.n3 = n3;
+    }
+
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "professor_id")

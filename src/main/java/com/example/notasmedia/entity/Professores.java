@@ -22,6 +22,7 @@ public class Professores {
 
     private String materia;
 
+
     @OneToMany(mappedBy = "professores")
     private List<Alunos> alunos;
 
@@ -30,4 +31,6 @@ public class Professores {
         this.nome = nome;
         this.materia = materia;
     }
+
+
 }

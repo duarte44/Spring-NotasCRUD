@@ -35,7 +35,6 @@ public class AlunosServices {
     }
 
     public Alunos update(Alunos obj){
-        verificaSeExiste(obj.getId());
         Alunos newObj = findById(obj.getId());
         updateData(newObj, obj);
         return alunosRepository.save(newObj);
@@ -43,14 +42,13 @@ public class AlunosServices {
     }
 
     public void delete(Long id){
-       findById(id);
-        alunosRepository.deleteById(id);
+       alunosRepository.deleteById(id);
     }
 
 
 
     public Alunos fromDTO(AlunosDTO objDto){
-        return new Alunos(objDto.getId(), objDto.getNome(), objDto.getN1(), objDto.getN2(), objDto.getN3(), objDto.getProfessores());
+        return new Alunos(objDto.getId(), objDto.getNome(), objDto.getN1(), objDto.getN2(), objDto.getN3());
     }
 
 
@@ -63,10 +61,6 @@ public class AlunosServices {
 
     }
 
-    private void verificaSeExiste(Long id){
-        if(alunosRepository.findById(id) == null){
-            throw new ResourceNotFoundException("Aluno não encontrado, id: " + id);
-        }
-    }
+
 
 }

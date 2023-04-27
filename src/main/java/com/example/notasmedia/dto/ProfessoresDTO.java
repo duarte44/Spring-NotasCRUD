@@ -1,6 +1,7 @@
 package com.example.notasmedia.dto;
 
 import com.example.notasmedia.entity.Alunos;
+import com.example.notasmedia.entity.Professores;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,9 @@ public class ProfessoresDTO {
     private String materia;
 
 
-
+    public ProfessoresDTO(Professores obj) {
+        this.id = obj.getId();
+        this.nome = obj.getNome();
+        this.materia = obj.getMateria();
+    }
 }

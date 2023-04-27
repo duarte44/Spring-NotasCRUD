@@ -36,7 +36,7 @@ public class AlunosDTO {
     private Double n3;
 
 
-    private Professores professores;
+
 
 
     public AlunosDTO(Alunos obj){
@@ -46,6 +46,7 @@ public class AlunosDTO {
         this.n1 = obj.getN1();
         this.n2 = obj.getN2();
         this.n3 = obj.getN3();
+
 
     }
 }
